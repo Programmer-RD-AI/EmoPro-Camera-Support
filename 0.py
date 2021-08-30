@@ -9,16 +9,12 @@ import datetime
 from werkzeug.utils import header_property
 camera = PiCamera()
 camera.start_preview()
-for _ in tqdm(range(100
-                    
-                    
-                    
-                    )):
+for _ in tqdm(range(100)):
     camera.annotate_text = f'{_}'
     camera.capture('test.jpg')
     start_time = [datetime.datetime.now().minute, datetime.datetime.now().second]
     file = {'file': open('./test.jpg', 'rb')}
-    requests.get('http://192.168.1.9:5895/hdhf', {'user_name': 'Ranuga', 'name_of_product': 'biscuit','password': 'Ranuga', 'email': 'go2ranuga@gmail.com'}, files=file).json()['result']
+    requests.get('http://:/hdhf', {'user_name': 'Ranuga', 'name_of_product': 'biscuit','password': 'Ranuga', 'email': 'go2ranuga@gmail.com'}, files=file).json()['result']
     end_time = [datetime.datetime.now().minute, datetime.datetime.now().second]
     print(
         f'\n Mins : {end_time[0]-start_time[0]} \n Secs : {end_time[1]-start_time[1]}')

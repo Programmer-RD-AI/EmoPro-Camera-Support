@@ -1,12 +1,9 @@
 from picamera import PiCamera
 from time import sleep
-import time
-from PIL import Image
 from tqdm import tqdm
 from flask import *
 import requests
 import datetime
-from werkzeug.utils import header_property
 camera = PiCamera()
 camera.start_preview()
 for _ in tqdm(range(100)):
